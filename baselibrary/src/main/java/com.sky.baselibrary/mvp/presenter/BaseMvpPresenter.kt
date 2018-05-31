@@ -1,6 +1,5 @@
-package com.sky.baselibrary.mvp
+package com.sky.baselibrary.mvp.presenter
 
-import com.sky.baselibrary.mvp.presenter.MvpPresenter
 import com.sky.baselibrary.mvp.view.BaseMvpView
 import kotlin.RuntimeException
 
@@ -30,6 +29,6 @@ open class BaseMvpPresenter<V : BaseMvpView> : MvpPresenter<V> {
         }
     }
 
-    class MvpViewNotAttachedException : RuntimeException(message = "Please call " +
-            "Presenter.attach(MvoView) before requesting data to the Presenter.")
+    class MvpViewNotAttachedException : RuntimeException("Please call Presenter.attach(MvpView)" +
+            "before requesting data to the Presenter.")
 }
